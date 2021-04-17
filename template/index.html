@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中医管理系统</title>
+    <script src="/static/plugins/bootstrap-3.3.7-dist/js/jquery.js"></script>
+    <link href="/static/plugins/layui/css/layui.css" rel="stylesheet">
+    <script src="/static/plugins/layui/layui.js"></script>
+    <script src="/static/js/index.js"></script>
+    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="/static/css/commom.css" rel="stylesheet">
+    {% block css %}{% endblock %}
+    {% block js%}{% endblock%}
+</head>
+<body>
+
+<div class="pg_header">
+    <div class="logo left"> 中医药管理平台
+        <i class="layui-icon layui-icon-tree" style="font-size: 30px; color: #1E9FFF;margin:0px"></i>
+    </div>
+    <div class=" right">
+        <image></image>
+    </div>
+    <div class="rmenus right">
+        <a> 消息</a>
+        <a>邮件</a>
+    </div>
+</div>
+
+<div class="pg_body">
+    <div class="menus">
+
+        <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="demo" style="margin-right: 10px;">
+            <li class="layui-nav-item ">
+
+                <a href="javaScript:void(0)"> <i class="layui-icon layui-icon-list"  style="font-size:25px;" > </i> 病案管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="{%url 'upload'%}">手动输入</a></dd>
+                    <dd><a href="{%url 'fileupload'%}">文件导入</a></dd>
+                    <dd><a href="{%url 'show'%}">查看病案</a></dd>
+                    <dd><a href="{%url 'modify'%}">修改病案</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item  ">
+                <a href="javaScript:void(0)"><i class="layui-icon layui-icon-app"  style="font-size:25px;"> </i>病案分析</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="{%url 'Frequencyanalysis'%}">导入分析</a></dd>
+                    <dd><a href="">手动选择分析</a></dd>
+                    <dd><a href="">电商平台</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="32">帮助</a></li>
+            <li class="layui-nav-item"><a href="232"><i class="layui-icon layui-icon-friends" style="font-size:25px;"></i>个人信息</a></li>
+        </ul>
+
+    </div>
+
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+.layui-input:first-child {
+    display: block;
+    width: 200px;
+    padding-left: 10px;
+}
+
+.layui-form-item{
+ margin-top:30px;
+}
+
+.layui-form{
+position:absolute;
+
+margin: 20px 0 0 20px;
+}
+
+.layui-form-radio>i {
+    margin-right: 0px;
+    font-size: 22px;
+}
+
+.layui-anim.layui-icon {
+    display: inline-block;
+    margin-left:-10px
+}

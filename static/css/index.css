@@ -1,0 +1,57 @@
+      .pg_header{
+         height: 48px;
+         min_width: 1190px;
+          background-color:rgb(57,61,73);
+         line-height:48px;
+        }
+        .menus{
+          width: 200px;
+          position: absolute;
+          top:48px;
+          bottom:0px;
+          left:0px;
+          background-color:rgb(57,61,73);
+
+        }
+        .pg_header   .logo{
+          color:white;
+          font-size:18px;
+          width:200px;
+          text-align:center;
+        }
+        .pg_header .rmenus  a{
+          display:inline-block;
+          padding: 0 15px;
+          color:white;
+        }
+
+
+    .layui-nav .layui-nav-item a {
+       padding: 0 40px;
+       }
+        .content{
+          position: absolute;
+          left:200px;
+          top:48px;
+          bottom:0px;
+          right:0px;
+          overflow :scroll;
+          background-color: white;
+        }
+
+        .left{
+        float:left;
+        }
+
+        .right{
+        float:right;
+        }
+
+
+       .list-group{
+       margin:0px;
+       }
+       .leftMenu{
+       margin:0px;
+       }
+

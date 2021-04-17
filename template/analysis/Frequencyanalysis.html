@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block css %}
+<link href="/static/css/upload.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<div   style="width:100%;text-align:center">
+<form class="layui-form" >
+<div class="layui-form-item">
+    <label class="layui-form-label">单选框</label>
+    <div class="layui-input-block">
+      <input type="radio" name="sex" value="男" title="文件选择">
+      <input type="radio" name="sex" value="女" title="批量导入" checked>
+    </div>
+  </div>
+</form>
+   </div>
+<div   style="width:100%;text-align:center">
+<form action="/AnalysisResult/" method="post" enctype="multipart/form-data"  >
+    <label for="exampleInputFile">文件选择</label>
+        <input type="file" name="fafafa" id="exampleInputFile" style="margin-top:30px;">
+        <input type="submit"  class="btn btn-defaul " style="margin-top:30px;" >
+</form>
+</div>
+
+  {% endblock %}

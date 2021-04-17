@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+
+ {% block css %}
+<style>
+ .layui-table-cell{
+height:60px;
+width:200px;
+line-height:60px;
+}
+th .layui-table-cell{
+height:30px;
+width:200px;
+line-height:30px;
+}
+th .laytable-cell-1-0-7{
+height:30px;
+width:200px;
+line-height:30px;
+}
+.layui-table img{
+width:100px;
+height:60px;
+}
+</style>
+{% endblock %}
+ {% block content %}
+<div   style="width:100%;text-align:center">
+<form action="/fileupload/" method="post" enctype="multipart/form-data"  >
+    <label for="exampleInputFile">文件选择</label>
+        <input type="file" name="fafafa" id="exampleInputFile" style="margin-top:30px;">
+        <input type="submit"  class="btn btn-defaul " style="margin-top:30px;" >
+</form>
+</div>
+  {% endblock %}

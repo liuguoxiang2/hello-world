@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+
+
+{% block css %}
+<link href="/static/css/upload.css" rel="stylesheet">
+<style>
+.layui-table {
+    width:500px;
+    background-color: #fff;
+    color: #666;
+    margin:20px auto;
+}
+
+</style>
+{% endblock %}
+{% block js%}
+<script src="/static/js/modify.js"></script>
+{% endblock%}
+{% block content %}
+<div class="layui-form">
+
+    <label class="layui-form-label">姓名</label>
+    <div class="layui-input-block">
+        <input type="text" id="userName" name="userName" autocomplete="off" placeholder="请输入姓名"
+               class="layui-input"/>
+    </div>
+
+
+    <table class="layui-table">
+        <colgroup>
+            <col width="150">
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+
+        <tr>
+            <th>id</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>时间</th>
+            <th>证候</th>
+            <th>来源</th>
+            <th>处方组成</th>
+            <th>操作</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        {% for medicalinfo in msg %}
+        <tr>
+            <form action="/modify/" method="post">
+                <td  contenteditable="false">{{medicalinfo.id}}</td><input name="id" value="{{medicalinfo.id}}"  type = "hidden">
+                <td name="name_td"  contenteditable="false" onkeyup="tdchange()">{{medicalinfo.name}}</td><input name="name" value="{{medicalinfo.name}}"  type = "hidden">
+                <td name="sex_td"  contenteditable="false" onkeyup="tdchange()">{{medicalinfo.sex}}</td><input name="sex" value="{{medicalinfo.sex}}"  type = "hidden">
+                <td name="date_td"  contenteditable="false" onkeyup="tdchange()">{{medicalinfo.date}}</td><input name="date" value="{{medicalinfo.date}}"  type = "hidden">
+                <td name="syndrome_td"  contenteditable="false" onkeyup="tdchange()">{{medicalinfo.syndrome}}</td><input name="syndrome" value="{{medicalinfo.syndrome}}"  type = "hidden">
+                <td name="source_td"  contenteditable="false" onkeyup="tdchange()">{{medicalinfo.source}}</td><input name="source" value="{{medicalinfo.source}}"  type = "hidden">
+                <td name="combination_td"  contenteditable="false" onkeyup="tdchange()">{{medicalinfo.combination}}</td><input name="combination" value="{{medicalinfo.combination}}"  type = "hidden">
+               
+                <td contenteditable="false">
+                    <a onclick="return confirm('确认要删除？')" class="layui-btn layui-btn-danger "
+                       href="/delete/?did={{medicalinfo.id}}">删除</a>
+                    <button class="layui-btn layui-btn-warm" type="button" name="edit">编辑</button>
+                    <button onclick="return confirm('确认要更改？')" class="layui-btn" lay-submit
+                    >提交更改
+                    </button>
+                </td>
+            </form>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}
+
+</body>
+</html>>
